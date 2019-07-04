@@ -79,7 +79,7 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
             # TODO: Complete this train method to train the model provided.
             
             # zero the accumulated gradients
-            model.zero_grad()
+            optimizer.zero_grad()
             
             # Forward pass
             output = model.forward(batch_X)

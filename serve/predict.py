@@ -91,8 +91,8 @@ def predict_fn(input_data, model):
     #       be a numpy array which contains a single integer which is either 1 or 0
 
     with torch.no_grad():
-        output = model.forward(data)
+        output = model.forward(data).detach().cpu().numpy()
     
-    result = np.round(output.numpy())
+    result = np.round(output).astype(np.int)
 
     return result
